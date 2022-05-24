@@ -1,0 +1,55 @@
+//global styles
+$primery-color: #ffd700;
+
+//librery imports
+@import "animate.css";
+@import "~loaders.css/src/animations/pacman.scss";
+//fonts imports
+@font-face {
+  font-family: "Helventikaeue";
+  src: url("./assets/fonts/helvetica-neu.ttf") format("ttf");
+}
+@font-face {
+  font-family: "LaBellaAurore";
+  src: url("./assets/fonts/LaBelleAurore.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Coolvetica";
+  src: url("./assets/fonts/CoolveticaRg-Regular.woff2") format("woff2");
+}
+
+// general styles
+input,
+textarea {
+  font-family: "Helventikaeue";
+}
+::-webkit-scrollbar {
+  width: 1px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 1px;
+  border: 3px solid transparent;
+}
+//media querys
+$media-desktop: "only screen and (max-width : 1024px)";
+$media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+
+.loader-active {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
+}

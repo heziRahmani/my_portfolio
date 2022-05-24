@@ -1,0 +1,238 @@
+.sideBar_container {
+  position: relative;
+  height: 100vh;
+  width: 60px;
+  background-color: aqua;
+}
+// @media (max-width: 1024px) {
+.sideBar_container {
+  width: 100px;
+  min-width: 100px;
+
+  min-height: 100vh;
+  background-color: #181818;
+}
+.sideBar_icon_box {
+  display: block;
+  padding: 8px 0;
+  img {
+    display: block;
+    margin: 8px auto;
+    width: 24px;
+    //   height: auto;
+  }
+}
+.sideBar_nav_box {
+  nav {
+    display: block;
+    text-align: center;
+    position: absolute;
+    height: 210px;
+    top: 25%;
+    margin-top: -120px;
+    width: 100%;
+    a {
+      font-size: 22px;
+      color: 4d4d4e;
+      display: block;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      text-decoration: none;
+      i {
+        transition: all 0.3s ease-out;
+      }
+      &:hover {
+        color: #ffd700;
+        svg {
+          opacity: 0;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+      &::after {
+        content: "";
+        font-size: 9px;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
+      &:first-child {
+        &::after {
+          content: "HOME";
+        }
+      }
+      &:nth-child(2) {
+        &::after {
+          content: "ABOUT";
+        }
+      }
+      &:nth-child(3) {
+        &::after {
+          content: "CONTACT";
+        }
+      }
+
+      a.active {
+        svg {
+          color: #ffd700;
+        }
+      }
+    }
+  }
+}
+ul {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  li {
+    a {
+      padding: 7px 0;
+      display: block;
+      font-size: 15px;
+      line-height: 16px;
+    }
+
+    &:hover svg {
+      color: #ffd700;
+    }
+  }
+}
+// }
+@media (max-width: 600px) {
+  .openSideBar {
+    transform: translateY(0%) !important;
+    z-index: 10000;
+  }
+  .sideBar_container {
+    position: absolute;
+    height: 100vh;
+    width: 60%;
+    transform: translateY(-100%);
+    background-color: #181818;
+
+    .sideBar_icon_box {
+      height: 10%;
+      display: grid;
+      place-content: center;
+      a {
+        i {
+        }
+        &:hover {
+          color: #ffd700;
+          svg {
+            opacity: 1;
+          }
+          &::after {
+            opacity: 1;
+          }
+        }
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+    .sideBar_nav_box {
+      list-style: none;
+      margin-top: 5em;
+      nav {
+        display: block;
+        text-align: start;
+        position: relative;
+        height: 210px;
+        top: unset;
+        margin-top: 0;
+        width: 100%;
+        a {
+          font-size: 22px;
+          color: 4d4d4e;
+          display: block;
+          line-height: 51px;
+          height: 51px;
+          position: relative;
+          text-decoration: none;
+          color: #4d4d4e;
+
+          &:visited {
+            color: #4d4d4e;
+          }
+          i {
+            transition: all 0.3s ease-out;
+          }
+          svg {
+            padding: 0 1em;
+            opacity: 1;
+          }
+          &:hover {
+            color: #ffd700;
+            svg {
+              color: #ffd700;
+            }
+          }
+          &::after {
+            content: "";
+            font-size: 20px;
+            letter-spacing: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            display: block;
+            opacity: 1;
+            transition: all 0.3s ease-out;
+          }
+          &:first-child {
+            &::after {
+              content: "HOME";
+            }
+          }
+          &:nth-child(2) {
+            &::after {
+              content: "ABOUT";
+            }
+          }
+          &:nth-child(3) {
+            &::after {
+              content: "CONTACT";
+            }
+          }
+
+          &.active {
+            color: #ffd700;
+            svg {
+              color: #ffd700;
+            }
+          }
+        }
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+      position: absolute;
+      bottom: 20px;
+      //   left: 10%;
+      width: 100%;
+      list-style: none;
+      li {
+        a {
+          svg {
+            width: 30px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

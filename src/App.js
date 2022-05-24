@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from "react";
+import Loader from "react-loaders";
+import { Routes, Route } from "react-router-dom";
+import "./App.scss";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
+import Projects from "./components/projects/Projects";
+const LandingPage = lazy(() => import("./components/landingPage/LandingPage"));
+
+const Layout = lazy(() => import("./components/layout/Layout"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loader type='pacman' />}>
+      <div className='App'>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<LandingPage />} />
+            <Route path='/about' element={<About />} />
+            {/* <Route path='/projects' element={<Projects />} /> */}
+            <Route path='/contact' element={<Contact />} />
+          </Route>
+        </Routes>
+      </div>
+    </Suspense>
   );
 }
 

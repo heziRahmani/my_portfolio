@@ -1,0 +1,39 @@
+.video-responsive {
+  overflow: hidden;
+
+  position: relative;
+  height: 30vh;
+  width: 50vh;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+@media (max-width: 1400px) {
+  .video-responsive {
+    overflow: hidden;
+
+    position: relative;
+    height: 30vh;
+    width: 30vh;
+  }
+
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}
+@media (max-width: 1000px) {
+  .video-responsive iframe,
+  .video-responsive {
+    display: none;
+  }
+}
