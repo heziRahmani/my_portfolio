@@ -8,9 +8,15 @@ const Layout = () => {
     const icon = document.querySelector(".icon");
     const sideBar = document.getElementById("sideBar_container");
 
-    icon.classList.toggle("open");
-
-    sideBar.classList.toggle("openSideBar");
+    if (sideBar.classList.contains("sideBar_container")) {
+      icon.classList.toggle("open");
+      sideBar.classList.remove("sideBar_container");
+      sideBar.classList.add("openSideBar");
+    } else {
+      icon.classList.toggle("open");
+      sideBar.classList.add("sideBar_container");
+      sideBar.classList.remove("openSideBar");
+    }
   }
   return (
     <div className='layout_container' id='layout_container'>

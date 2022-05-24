@@ -112,16 +112,13 @@ ul {
 // }
 @media (max-width: 600px) {
   .openSideBar {
-    transform: translateY(0%) !important;
-    z-index: 10000;
-  }
-  .sideBar_container {
     position: absolute;
     height: 100vh;
     width: 60%;
-    transform: translateY(-100%);
+    transform: translateY(0%);
     background-color: #181818;
-
+    animation: slideInLeft 2s backwards, fadeIn 2s backwards;
+    z-index: 10000;
     .sideBar_icon_box {
       height: 10%;
       display: grid;
@@ -234,5 +231,13 @@ ul {
         }
       }
     }
+  }
+  .sideBar_container {
+    position: absolute;
+    height: 100vh;
+    width: 60%;
+    transform: translateY(-100%);
+    background-color: #181818;
+    animation: fadeOut 0.5s backwards, slideOutLeft 0.5s backwards;
   }
 }

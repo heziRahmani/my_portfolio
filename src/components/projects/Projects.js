@@ -25,7 +25,7 @@ import Loader from "react-loaders";
 const Projects = () => {
   const [letterClass, setletterClass] = useState("text-animate");
 
-  const projectsArrey = "PROJECTS".split("");
+  const projectsArrey = "LATEST PROJECTS".split("");
   const StudyBuddyArrey = "STUDY BUDDY".split("");
   const RestfulAPIArrey = "Restful API".split("");
   const poltrixArrey = "POULTRIX".split("");
